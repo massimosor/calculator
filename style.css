@@ -1,0 +1,110 @@
+/* Allgemeine Stile für den Taschenrechner */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Dunkelmodus-Stile */
+body.dark-mode {
+    background-color: #2e2e2e;
+    color: white;
+}
+
+/* Container für den Taschenrechner */
+.calculator {
+    width: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Display des Taschenrechners */
+#display {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-align: right;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Allgemeine Stile für die Tasten */
+.button {
+    width: 23%;
+    height: 50px;
+    margin: 1%;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+/* Hover-Effekt für die Tasten */
+.button:hover {
+    background-color: #d0d0d0;
+}
+
+/* Stile für den Dark Mode Button */
+#dark-mode {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Tastenfarben für verschiedene Typen */
+#dark-mode:hover {
+    background-color: #555;
+}
+
+button[data-value="C"] {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+button[data-value="C"]:hover {
+    background-color: #e00000;
+}
+
+button[data-value="="] {
+    background-color: #4caf50;
+    color: white;
+}
+
+button[data-value="="]:hover {
+    background-color: #45a049;
+}
+
+button[data-value="+"] {
+    background-color: #f0a500;
+    color: white;
+}
+
+button[data-value="+"]:hover {
+    background-color: #e09400;
+}
+
+/* Weitere spezifizierte Stile für spezielle Tasten */
+button[data-value="±"] {
+    background-color: #777;
+    color: white;
+}
+
+button[data-value="±"]:hover {
+    background-color: #555;
+}
