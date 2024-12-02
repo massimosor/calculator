@@ -16,6 +16,12 @@ darkModeButton.addEventListener("click", (e) => {
     document.body.classList.toggle("dark-mode"); // Schaltet den Dark Mode ein/aus
 });
 
+// Scroll die History automatisch nach unten, wenn ein neuer Eintrag hinzugefügt wird
+function scrollHistoryToBottom(){
+    const historyList = document.querySelector('.history');
+    historyList.scrollTop = historyList.scrollHeight;
+}
+
 // Eventlistener für jede Taste
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -52,6 +58,9 @@ buttons.forEach((button) => {
                 const li = document.createElement("li");
                 li.textContent = historyItem;
                 historyList.appendChild(li);
+
+                // Scroll-Funktion aufrufen
+                scrollHistoryToBottom();
 
                 // Aktualisiere die Eingabeanzeige und setze die Variablen zurück
                 currentInput = result.toString();

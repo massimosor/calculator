@@ -15,13 +15,52 @@ body.dark-mode {
     color: white;
 }
 
+body.dark-mode .calculator {
+    background-color: #3a3a3a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #display {
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+}
+
+body.dark-mode .button {
+    background-color: #666;
+    color: white;
+}
+
+body.dark-mode .button:hover {
+    background-color: #555;
+}
+
+body.dark-mode .button.operator {
+    background-color: #0056b3;
+}
+
+body.dark-mode .button.operator:hover {
+    background-color: #003d80;
+}
+
+body.dark-mode button[data-value="C"] {
+    background-color: #ff6666;
+}
+
+body.dark-mode button[data-value="C"]:hover {
+    background-color: #ff3333;
+}
+
 /* Container für den Taschenrechner */
 .calculator {
-    width: 320px;
+    width: 450px;
     padding: 20px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Display des Taschenrechners */
@@ -34,13 +73,19 @@ body.dark-mode {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 /* Allgemeine Stile für die Tasten */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
 .button {
-    width: 23%;
     height: 50px;
-    margin: 1%;
     font-size: 1.5rem;
     text-align: center;
     border-radius: 5px;
@@ -59,7 +104,7 @@ body.dark-mode {
 #dark-mode {
     width: 100%;
     height: 50px;
-    margin-bottom: 10px;
+    margin-top: 10px;
     background-color: #333;
     color: white;
     font-size: 1.5rem;
@@ -70,6 +115,15 @@ body.dark-mode {
 /* Tastenfarben für verschiedene Typen */
 #dark-mode:hover {
     background-color: #555;
+}
+
+.button.operator {
+    background-color: #007bff;
+    color: white;
+}
+
+.button.operator:hover {
+    background-color: #0056b3;
 }
 
 button[data-value="C"] {
@@ -84,27 +138,37 @@ button[data-value="C"]:hover {
 button[data-value="="] {
     background-color: #4caf50;
     color: white;
+    grid-column: span 2;
 }
 
 button[data-value="="]:hover {
     background-color: #45a049;
 }
 
-button[data-value="+"] {
-    background-color: #f0a500;
-    color: white;
+.history {
+    width: 100%;
+    max-height: 100px;
+    margin-top: 10px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #f9f9f9;
 }
 
-button[data-value="+"]:hover {
-    background-color: #e09400;
+.history ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Weitere spezifizierte Stile für spezielle Tasten */
-button[data-value="±"] {
-    background-color: #777;
-    color: white;
+.history ul li {
+    margin-bottom: 5px;
 }
 
-button[data-value="±"]:hover {
+body.dark-mode .history {
     background-color: #555;
+    color: white;
+    border: 1px solid #777;
 }
